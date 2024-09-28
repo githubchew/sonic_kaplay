@@ -28,8 +28,8 @@ export default function mainMenu() {
   ];
 
   k.add([
-    k.text("Sonic Ring Run" , { font: "mania", size: 96 }  ),
-    k.pos(k.center()),
+    k.text("Sonic Ring Run" , { size: 96 }  ),
+    k.pos(k.center().x,200),
     k.anchor("center"),
    ]    );
 
@@ -38,6 +38,12 @@ export default function mainMenu() {
   k.pos(100,100),
   k.anchor("left"),
 
+])
+
+k.add([
+  k.text("press space to play", { size: 44 }  ),
+  k.anchor('center'),
+  k.pos(k.center().x, 400),
 ])
 
 
