@@ -30,6 +30,22 @@ k.loadSprite("motobug", "graphics/motobug.png", {
   },
 });
 
+k.loadSprite("fruits", "graphics/fruits_pixel.png", {
+  sliceX: 3,
+  sliceY: 3,
+  anims: {
+    avocadoSprite: 0,
+    strawberrySprite: 1,
+    grapeSprite: 2,
+    bananaSprite: 3,
+    pineappleSprite: 4,
+    orangeSprite: 5,
+    watermelonSprite: 6,
+    appleSprite: 7,
+    lemonSprite: 8,
+  },
+});
+
 k.loadFont("mania", "fonts/mania.ttf");
 k.loadSound("destroy", "sounds/Destroy.wav");
 k.loadSound("hurt", "sounds/Hurt.wav");

@@ -2,6 +2,7 @@ import { makeSonic } from "../entities/sonic.js";
 import { makeMotobug } from "../entities/motobug.js";
 import { makeRing } from "../entities/ring.js";
 import k from "../kaplayCtx.js";
+import { makeFruits } from "../entities/fruits.js";
 
 export default function game() {
   k.setGravity(3000);
@@ -103,7 +104,25 @@ export default function game() {
     const waitTime = k.rand(4.5, 10.5);
     k.wait(waitTime, spawnMotobug2);
   };
+
+  //make fruits display on screen
+  const spawnFruits = () => {
+    const fruit = makeFruits(k.vec2(2000, 235));
+    fruit.onUpdate(() => {
+      fruit.move(-450, 0);
+    });
+
+    fruit.onExitScreen(() => {
+      if (fruit.pos.x < 0) k.destroy(fruit);
+    });
+
+    const waitTime = k.rand(4.5, 10.5);
+    k.wait(waitTime, spawnFruits);
+  };
+
   //-------------------------------------------------------
+
+  spawnFruits();
   spawnMotobug();
   spawnMotobug2();
 
